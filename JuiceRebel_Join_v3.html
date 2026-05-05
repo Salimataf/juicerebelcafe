@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join — Juice Rebel Founding Members</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #69a151;
+    --pink: #ff24aa;
+    --orange: #ffa816;
+    --dark: #1e1e1e;
+    --body: #3a3a3a;
+    --mid: #787878;
+    --light: #ebebeb;
+    --bg: #f7f5f1;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--light);
+    padding: 0 60px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav img { height: 48px; }
+
+  .nav-right { display: flex; align-items: center; gap: 32px; }
+
+  .nav-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-cta {
+    background: var(--green);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: #5b8e45; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--white);
+    padding: 80px 60px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .hero-left { padding-bottom: 80px; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff6e0;
+    border: 1px solid #ffe4a0;
+    color: #b07200;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before { content: '★'; color: var(--orange); }
+
+  .hero-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 6.5vw, 88px);
+    line-height: 0.93;
+    color: var(--dark);
+    margin-bottom: 28px;
+  }
+
+  .hero-headline .accent-green { color: var(--green); }
+  .hero-headline .accent-pink { color: var(--pink); }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--body);
+    max-width: 460px;
+    margin-bottom: 40px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    border: 1.5px solid var(--light);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 20px 24px;
+    border-right: 1.5px solid var(--light);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 4px;
+  }
+
+  /* ─── FORM CARD ─── */
+  .hero-right { padding-bottom: 60px; }
+
+  .form-card {
+    background: var(--white);
+    border: 1.5px solid var(--light);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 88px;
+  }
+
+  .form-top {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light);
+  }
+
+  .form-badge {
+    display: inline-block;
+    background: #ffeef8;
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+    border: 1px solid #ffd1ee;
+  }
+
+  .form-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .form-subtitle {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  /* slots */
+  .slots-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .slots-label { font-size: 12px; font-weight: 500; color: var(--body); }
+  .slots-num { font-size: 12px; font-weight: 700; color: var(--pink); }
+
+  .slots-track {
+    height: 5px;
+    background: var(--light);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .slots-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green), var(--orange));
+    border-radius: 100px;
+    transition: width 1.2s cubic-bezier(.4,0,.2,1);
+  }
+
+  /* ─── PAYMENT TOGGLE ─── */
+  .toggle-wrap {
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    border: 1.5px solid var(--light);
+    position: relative;
+  }
+
+  .toggle-btn {
+    padding: 10px 12px;
+    border-radius: 9px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    transition: all 0.22s;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .toggle-btn.active {
+    background: var(--white);
+    color: var(--dark);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-weight: 600;
+  }
+
+  .toggle-btn .toggle-sub {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .toggle-btn.active .toggle-sub { color: var(--green); font-weight: 600; }
+
+  /* pay now perks banner */
+  .pay-now-perks {
+    display: none;
+    background: linear-gradient(135deg, #fff6e0, #ffeef8);
+    border: 1.5px solid #ffd1ee;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .pay-now-perks.visible { display: flex; }
+
+  .perks-banner-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 2px;
+  }
+
+  .perks-banner-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--body);
+    line-height: 1.4;
+  }
+
+  .perks-banner-item .icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+
+  /* plans */
+  .plans-header {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .plans { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+
+  .plan {
+    border: 2px solid var(--light);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color 0.18s, background 0.18s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+
+  .plan:hover { border-color: var(--green); }
+  .plan.selected { border-color: var(--green); background: #f2f8ee; }
+
+  .plan-left { display: flex; align-items: center; gap: 12px; }
+
+  .radio-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.18s;
+  }
+
+  .plan.selected .radio-dot { border-color: var(--green); background: var(--green); }
+  .plan.selected .radio-dot::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  .plan-name { font-weight: 600; font-size: 14px; color: var(--dark); }
+  .plan-drinks { font-size: 11px; color: var(--mid); margin-top: 1px; }
+
+  .plan-pricing { text-align: right; min-width: 80px; }
+
+  .plan-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--green);
+    line-height: 1;
+    transition: all 0.2s;
+  }
+
+  .plan-was { font-size: 11px; color: #bbb; text-decoration: line-through; }
+
+  .plan-save-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 0.04em;
+  }
+
+  .popular-pill {
+    position: absolute;
+    top: -9px;
+    left: 14px;
+    background: var(--pink);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* fields */
+  .field { margin-bottom: 14px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .field label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 5px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--light);
+    border-radius: 9px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.18s;
+  }
+
+  .field input:focus { border-color: var(--green); }
+  .field input.error { border-color: var(--pink); }
+
+  /* submit */
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+    margin-top: 4px;
+  }
+
+  .submit-btn.pay-now-btn { background: var(--pink); }
+  .submit-btn.pay-now-btn:hover { background: #e0008f; }
+
+  .submit-btn:hover {
+    background: #5b8e45;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(105,161,81,0.25);
+  }
+
+  .submit-btn:active { transform: translateY(0); box-shadow: none; }
+
+  .form-fine {
+    font-size: 11px;
+    color: #aaa;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  /* success */
+  .success-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .success-check {
+    width: 56px;
+    height: 56px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .success-check.pink-check { background: var(--pink); }
+
+  .success-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+
+  .success-body {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--body);
+    line-height: 1.6;
+    max-width: 300px;
+  }
+
+  /* ─── TICKER ─── */
+  .ticker {
+    background: var(--green);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-inner {
+    display: inline-flex;
+    animation: ticker 22s linear infinite;
+  }
+
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.9);
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .ticker-item::after { content: '✦'; color: rgba(255,255,255,0.4); font-size: 12px; }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ─── PROTEIN ─── */
+  .protein-section {
+    background: var(--white);
+    padding: 100px 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .protein-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(120px, 14vw, 180px);
+    color: var(--green);
+    line-height: 0.85;
+  }
+
+  .protein-big .unit {
+    font-size: 0.45em;
+    vertical-align: top;
+    margin-top: 0.15em;
+    display: inline-block;
+    color: var(--orange);
+  }
+
+  .protein-right h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 4vw, 54px);
+    color: var(--dark);
+    line-height: 0.95;
+    margin-bottom: 18px;
+  }
+
+  .protein-right p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--body);
+    max-width: 520px;
+    margin-bottom: 28px;
+  }
+
+  .ingredient-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .tag {
+    border: 1.5px solid var(--light);
+    color: var(--body);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 100px;
+    background: var(--bg);
+  }
+
+  .tag.green { border-color: var(--green); color: var(--green); background: #f2f8ee; }
+
+  /* ─── BENEFITS ─── */
+  .benefits { background: var(--bg); padding: 100px 60px; }
+  .benefits-inner { max-width: 1280px; margin: 0 auto; }
+
+  .section-top { margin-bottom: 56px; }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 12px;
+  }
+
+  .section-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 5vw, 64px);
+    color: var(--dark);
+    line-height: 0.95;
+  }
+
+  .section-headline span { color: var(--green); }
+
+  .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .benefit-card {
+    background: var(--white);
+    border: 1.5px solid var(--light);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .benefit-card:hover {
+    border-color: var(--green);
+    box-shadow: 0 4px 24px rgba(105,161,81,0.1);
+  }
+
+  .benefit-emoji { font-size: 28px; margin-bottom: 16px; display: block; }
+  .benefit-title { font-weight: 600; font-size: 15px; color: var(--dark); margin-bottom: 8px; }
+  .benefit-body { font-size: 13px; font-weight: 300; line-height: 1.65; color: var(--mid); }
+
+  /* ─── LOCATION ─── */
+  .location-strip {
+    background: var(--dark);
+    padding: 64px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .location-left { max-width: 560px; }
+
+  .location-left h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 16px;
+  }
+
+  .location-left h3 span { color: var(--orange); }
+
+  .location-left p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+
+  .location-details { display: flex; flex-direction: column; gap: 14px; min-width: 280px; }
+
+  .loc-item { display: flex; align-items: flex-start; gap: 12px; }
+
+  .loc-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--orange);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .loc-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .loc-text strong { color: #fff; font-weight: 600; }
+
+  /* ─── PERKS ─── */
+  .perks-section { background: var(--white); padding: 100px 60px; }
+  .perks-inner { max-width: 1280px; margin: 0 auto; }
+
+  .perks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 56px; }
+
+  .perk-card {
+    border-top: 3px solid var(--light);
+    padding-top: 24px;
+    transition: border-color 0.2s;
+  }
+
+  .perk-card:hover { border-color: var(--green); }
+
+  .perk-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .perk-title { font-weight: 600; font-size: 15px; color: var(--dark); margin-bottom: 8px; }
+  .perk-body { font-size: 13px; font-weight: 300; line-height: 1.65; color: var(--mid); }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    background: var(--pink);
+    padding: 80px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(255,168,22,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .final-cta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 88px);
+    color: #fff;
+    line-height: 0.93;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .final-cta p {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    max-width: 460px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+    position: relative;
+  }
+
+  .final-cta-btn {
+    display: inline-block;
+    padding: 18px 52px;
+    background: #fff;
+    color: var(--pink);
+    border-radius: 12px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .final-cta-btn:hover { background: var(--dark); color: #fff; transform: translateY(-2px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer img { height: 44px; opacity: 0.7; }
+
+  .footer-links { display: flex; gap: 28px; }
+
+  .footer-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-link { display: none; }
+
+    .hero { grid-template-columns: 1fr; padding: 40px 24px 0; gap: 40px; }
+    .hero-left { padding-bottom: 0; }
+    .hero-right { padding-bottom: 40px; }
+    .form-card { position: static; }
+
+    .protein-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 24px; }
+    .protein-big { font-size: 100px; }
+
+    .benefits { padding: 60px 24px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+
+    .location-strip { flex-direction: column; padding: 60px 24px; align-items: flex-start; }
+
+    .perks-section { padding: 60px 24px; }
+    .perks-grid { grid-template-columns: 1fr 1fr; }
+
+    .final-cta { padding: 60px 24px; }
+
+    footer { flex-direction: column; gap: 20px; padding: 40px 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .field-row { grid-template-columns: 1fr; }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="JuiceRebelSquareLogo.png" alt="Juice Rebel">
+  <div class="nav-right">
+    <a href="#why" class="nav-link">Why Juice Rebel</a>
+    <a href="#member-perks" class="nav-link">Member Perks</a>
+    <a href="#formCard" class="nav-cta">Join Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="background: var(--white);">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Founding Members · Limited to 100</div>
+      <h1 class="hero-headline">
+        Your<br>
+        post-workout<br>
+        <span class="accent-green">fuel.</span><br>
+        <span class="accent-pink">Rebel-made.</span>
+      </h1>
+      <p class="hero-sub">25 grams of clean plant protein. Real fruit. Global flavors. Under 90 seconds. Opening Summer 2026 in Natick — founding memberships now open.</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">25g</div>
+          <div class="stat-label">Protein / drink</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100</div>
+          <div class="stat-label">Founding spots</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">$0</div>
+          <div class="stat-label">Due today</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="hero-right">
+      <div class="form-card" id="formCard">
+
+        <div id="formContent">
+          <div class="form-top">
+            <div class="form-badge">Founding Member Offer</div>
+            <h2 class="form-title">Claim Your Spot</h2>
+            <p class="form-subtitle">First 100 members only. Reserve free or pay now for exclusive perks.</p>
+          </div>
+
+          <div class="slots-row">
+            <span class="slots-label">Founding spots remaining</span>
+            <span class="slots-num" id="slotsNum">77 of 100 left</span>
+          </div>
+          <div class="slots-track">
+            <div class="slots-fill" id="slotsFill"></div>
+          </div>
+
+          <!-- TOGGLE -->
+          <div class="toggle-wrap">
+            <button class="toggle-btn active" id="btn-reserve" onclick="setMode('reserve')">
+              Reserve My Spot
+              <span class="toggle-sub">$0 today · pay before opening</span>
+            </button>
+            <button class="toggle-btn" id="btn-paynow" onclick="setMode('paynow')">
+              Pay Now
+              <span class="toggle-sub">Unlock exclusive perks</span>
+            </button>
+          </div>
+
+          <!-- PAY NOW PERKS BANNER -->
+          <div class="pay-now-perks" id="payNowPerks">
+            <div class="perks-banner-title">Pay Now — Exclusive Perks Included</div>
+            <div class="perks-banner-item">
+              <span class="icon">🎉</span>
+              <span><strong>Invitation to the private pre-opening tasting event</strong> — exclusive access before we open to the public</span>
+            </div>
+            <div class="perks-banner-item">
+              <span class="icon">⚡</span>
+              <span><strong>Free boosts for your entire first month</strong> — try the Power Boost, Collagen, or both on every drink</span>
+            </div>
+          </div>
+
+          <p class="plans-header">Choose your plan</p>
+          <div class="plans">
+
+            <div class="plan" id="plan-regular" onclick="selectPlan('regular')">
+              <div class="plan-left">
+                <div class="radio-dot"></div>
+                <div>
+                  <div class="plan-name">Regular</div>
+                  <div class="plan-drinks">8 drinks / month</div>
+                </div>
+              </div>
+              <div class="plan-pricing">
+                <div class="plan-price" id="price-regular">$94/mo</div>
+                <div class="plan-was" id="was-regular">$104/mo</div>
+                <div class="plan-save-tag" id="save-regular">Save $10/mo</div>
+              </div>
+            </div>
+
+            <div class="plan selected" id="plan-committed" onclick="selectPlan('committed')">
+              <div class="popular-pill">Most Popular</div>
+              <div class="plan-left">
+                <div class="radio-dot"></div>
+                <div>
+                  <div class="plan-name">Committed</div>
+                  <div class="plan-drinks">12 drinks / month</div>
+                </div>
+              </div>
+              <div class="plan-pricing">
+                <div class="plan-price" id="price-committed">$135/mo</div>
+                <div class="plan-was" id="was-committed">$150/mo</div>
+                <div class="plan-save-tag" id="save-committed">Save $15/mo</div>
+              </div>
+            </div>
+
+            <div class="plan" id="plan-daily" onclick="selectPlan('daily')">
+              <div class="plan-left">
+                <div class="radio-dot"></div>
+                <div>
+                  <div class="plan-name">Daily</div>
+                  <div class="plan-drinks">20 drinks / month</div>
+                </div>
+              </div>
+              <div class="plan-pricing">
+                <div class="plan-price" id="price-daily">$215/mo</div>
+                <div class="plan-was" id="was-daily">$240/mo</div>
+                <div class="plan-save-tag" id="save-daily">Save $25/mo</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="field-row field">
+            <div>
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Jane">
+            </div>
+            <div>
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Smith">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="jane@email.com">
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone <span style="font-weight:300;text-transform:none;letter-spacing:0;">(optional)</span></label>
+            <input type="tel" id="phone" placeholder="(555) 000-0000">
+          </div>
+
+          <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">Reserve My Spot — $0 Today →</button>
+          <p class="form-fine" id="formFine">No payment today. We'll send your confirmation and payment link before opening day. Cancel anytime.</p>
+        </div>
+
+        <div class="success-screen" id="successScreen">
+          <div class="success-check" id="successCheck">✓</div>
+          <div class="success-title" id="successTitle">You're In.</div>
+          <p class="success-body" id="successBody">Check your email for confirmation. We'll send your payment link closer to opening day. Welcome to the founding 100.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">25g Protein Every Drink</span>
+    <span class="ticker-item">Opening Summer 2026</span>
+    <span class="ticker-item">Natick MA</span>
+    <span class="ticker-item">Real Ingredients Only</span>
+    <span class="ticker-item">Under 90 Seconds</span>
+    <span class="ticker-item">Steps from Orangetheory + F45</span>
+    <span class="ticker-item">Cochituate Rail Trail</span>
+    <span class="ticker-item">100 Founding Members</span>
+    <span class="ticker-item">Private Tasting Event</span>
+    <span class="ticker-item">Free Boosts First Month</span>
+    <span class="ticker-item">25g Protein Every Drink</span>
+    <span class="ticker-item">Opening Summer 2026</span>
+    <span class="ticker-item">Natick MA</span>
+    <span class="ticker-item">Real Ingredients Only</span>
+    <span class="ticker-item">Under 90 Seconds</span>
+    <span class="ticker-item">Steps from Orangetheory + F45</span>
+    <span class="ticker-item">Cochituate Rail Trail</span>
+    <span class="ticker-item">100 Founding Members</span>
+    <span class="ticker-item">Private Tasting Event</span>
+    <span class="ticker-item">Free Boosts First Month</span>
+  </div>
+</div>
+
+<!-- PROTEIN -->
+<div style="background: var(--white);">
+  <div class="protein-section">
+    <div class="protein-big">25<span class="unit">g</span></div>
+    <div class="protein-right">
+      <h2>Protein that actually<br>shows up.</h2>
+      <p>Every drink delivers a minimum of 25 grams of clean plant protein — pea, rice, and pumpkin seed blended at a precise ratio for neutral flavor and smooth texture. No artificial syrups. No chalky aftertaste. The protein disappears. The fruit carries the flavor.</p>
+      <div class="ingredient-tags">
+        <span class="tag green">Pea Protein</span>
+        <span class="tag green">Rice Protein</span>
+        <span class="tag green">Pumpkin Seed</span>
+        <span class="tag">Real Fruit</span>
+        <span class="tag">No Artificial Additives</span>
+        <span class="tag">Gram-Based Recipes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="benefits" id="why">
+  <div class="benefits-inner">
+    <div class="section-top">
+      <p class="section-eyebrow">Why Juice Rebel</p>
+      <h2 class="section-headline">Built for people<br><span>who train.</span></h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-emoji">💪</span>
+        <div class="benefit-title">25g protein. Every drink.</div>
+        <p class="benefit-body">Pea, rice, and pumpkin seed — blended at a precise ratio for maximum nutrition and zero flavor interference. Upgrade to the Power Boost for 35g with omega-3s, fiber, magnesium, and zinc.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-emoji">⚡</span>
+        <div class="benefit-title">Under 90 seconds.</div>
+        <p class="benefit-body">Post-workout fuel shouldn't require a wait. Gram-based recipes, batch-prepped blends, one size per category. Speed is a design decision, not a promise.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-emoji">🌿</span>
+        <div class="benefit-title">Clean ingredients only.</div>
+        <p class="benefit-body">Real fruit. No artificial syrups, no fillers, no shortcuts. We know every ingredient in every drink by gram weight and we're happy to tell you exactly what's in it.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-emoji">📍</span>
+        <div class="benefit-title">Right where you train.</div>
+        <p class="benefit-body">1 North Main Street — steps from Orangetheory, F45, and the Cochituate Rail Trail terminus. Walk out of class, walk in, walk out 90 seconds later.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-emoji">🔁</span>
+        <div class="benefit-title">A subscription that makes sense.</div>
+        <p class="benefit-body">Pre-pay for a monthly drink allotment. Skip the line, skip the decision. Founding members lock in their discount for as long as their membership is active.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-emoji">🌍</span>
+        <div class="benefit-title">Global flavors. Local café.</div>
+        <p class="benefit-body">Menu built around real flavor inspiration — ginger, turmeric, tamarind, matcha. Add-on boosts: collagen, Power Boost, functional herbs. Drinks that taste like somewhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<div class="location-strip">
+  <div class="location-left">
+    <h3>Opening <span>Summer 2026</span><br>in Natick, MA.</h3>
+    <p>Zero direct competitors in the market. Two gyms on the block. A rail trail that terminates at the front door. The founding member rate is the best deal we'll ever offer — locked in for life.</p>
+  </div>
+  <div class="location-details">
+    <div class="loc-item">
+      <div class="loc-dot"></div>
+      <div class="loc-text"><strong>Address:</strong> 1 North Main Street, Natick MA</div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-dot"></div>
+      <div class="loc-text"><strong>Nearby:</strong> Orangetheory + F45 on Main Street</div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-dot"></div>
+      <div class="loc-text"><strong>Trail:</strong> Cochituate Rail Trail terminus</div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-dot"></div>
+      <div class="loc-text"><strong>Rail:</strong> Natick Center commuter rail, across the street</div>
+    </div>
+    <div class="loc-item">
+      <div class="loc-dot"></div>
+      <div class="loc-text"><strong>Founding slots:</strong> 100 total. Standard pricing after.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PERKS -->
+<section class="perks-section" id="member-perks">
+  <div class="perks-inner">
+    <div class="section-top">
+      <p class="section-eyebrow">Founding Member Benefits</p>
+      <h2 class="section-headline">What you get<br><span>for joining first.</span></h2>
+    </div>
+    <div class="perks-grid">
+      <div class="perk-card">
+        <div class="perk-num">01</div>
+        <div class="perk-title">Locked-in rate. Forever.</div>
+        <p class="perk-body">Your founding rate stays as long as your membership is active. Regular saves $10/mo, Committed saves $15/mo, Daily saves $25/mo — every month, indefinitely.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-num">02</div>
+        <div class="perk-title">First access on opening day.</div>
+        <p class="perk-body">Founding members get 30 minutes of exclusive access before we open to the public. Be in before the line starts.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-num">03</div>
+        <div class="perk-title">Priority status, always.</div>
+        <p class="perk-body">Your subscription is pre-loaded. Walk in, give your name, get your drink. No app, no scan, no friction.</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-num">04</div>
+        <div class="perk-title">Cancel anytime.</div>
+        <p class="perk-body">No contracts, no minimums, no fees. Cancel with 48 hours notice before your next billing date. No questions asked.</p>
+      </div>
+    </div>
+
+    <!-- PAY NOW PERKS CALLOUT -->
+    <div style="margin-top: 48px; background: linear-gradient(135deg, #fff6e0, #ffeef8); border: 1.5px solid #ffd1ee; border-radius: 20px; padding: 40px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div>
+        <div class="section-eyebrow" style="margin-bottom: 10px;">Pay Now Exclusives</div>
+        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--dark); line-height: 1; margin-bottom: 14px;">Two perks you can't<br>get any other way.</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--body); line-height: 1.65;">When you pay upfront, you're not just locking in your rate — you're getting access to a private event and a full month of free boost upgrades. These aren't available to reserve-now members.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; gap: 16px; align-items: flex-start;">
+          <div style="font-size: 32px; flex-shrink: 0;">🎉</div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px; color: var(--dark); margin-bottom: 4px;">Private pre-opening tasting event</div>
+            <div style="font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.5;">Exclusive invitation to taste the full menu before we open. Try every drink, meet the team, give your feedback. Only available to pay-now founding members.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: flex-start;">
+          <div style="font-size: 32px; flex-shrink: 0;">⚡</div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px; color: var(--dark); margin-bottom: 4px;">Free boosts for your entire first month</div>
+            <div style="font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.5;">Power Boost, Collagen, or both — on every drink for your entire first month, on us. A $2–3 add-on, every visit, free.</div>
+          </div>
+        </div>
+      </div>
+      <div style="grid-column: 1 / -1; text-align: center; padding-top: 8px; border-top: 1px solid #ffd1ee;">
+        <a href="#formCard" onclick="setMode('paynow')" style="display: inline-block; background: var(--pink); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em; padding: 14px 40px; border-radius: 10px; text-decoration: none; transition: background 0.2s;">Pay Now and Unlock These Perks →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Only 100 spots.<br>Don't wait.</h2>
+  <p>Reserve free or pay now for exclusive perks. Either way, your founding rate is locked in for life.</p>
+  <a href="#formCard" class="final-cta-btn">Claim Your Spot →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="JuiceRebelSquareLogo.png" alt="Juice Rebel">
+  <div class="footer-links">
+    <a href="#">Instagram</a>
+    <a href="#">Menu</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Juice Rebel · Natick, MA</div>
+</footer>
+
+<script>
+  // Pricing data
+  const pricing = {
+    reserve: {
+      regular:   { price: '$94/mo',  was: '$104/mo', save: 'Save $10/mo' },
+      committed: { price: '$135/mo', was: '$150/mo', save: 'Save $15/mo' },
+      daily:     { price: '$215/mo', was: '$240/mo', save: 'Save $25/mo' }
+    },
+    paynow: {
+      regular:   { price: '$94/mo',  was: '$104/mo', save: 'Save $10/mo + perks' },
+      committed: { price: '$135/mo', was: '$150/mo', save: 'Save $15/mo + perks' },
+      daily:     { price: '$215/mo', was: '$240/mo', save: 'Save $25/mo + perks' }
+    }
+  };
+
+  // Square payment links — replace these with your actual Square links
+  const squareLinks = {
+    reserve: {
+      regular:   '#SQUARE-RESERVE-REGULAR',
+      committed: '#SQUARE-RESERVE-COMMITTED',
+      daily:     '#SQUARE-RESERVE-DAILY'
+    },
+    paynow: {
+      regular:   '#SQUARE-PAYNOW-REGULAR',
+      committed: '#SQUARE-PAYNOW-COMMITTED',
+      daily:     '#SQUARE-PAYNOW-DAILY'
+    }
+  };
+
+  let currentMode = 'reserve';
+  let currentPlan = 'committed';
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('slotsFill').style.width = '23%';
+    }, 600);
+  });
+
+  function setMode(mode) {
+    currentMode = mode;
+
+    // Toggle buttons
+    document.getElementById('btn-reserve').classList.toggle('active', mode === 'reserve');
+    document.getElementById('btn-paynow').classList.toggle('active', mode === 'paynow');
+
+    // Perks banner
+    const banner = document.getElementById('payNowPerks');
+    banner.classList.toggle('visible', mode === 'paynow');
+
+    // Update pricing labels
+    ['regular', 'committed', 'daily'].forEach(plan => {
+      const d = pricing[mode][plan];
+      document.getElementById('price-' + plan).textContent = d.price;
+      document.getElementById('was-' + plan).textContent = d.was;
+      document.getElementById('save-' + plan).textContent = d.save;
+    });
+
+    // Update button
+    const btn = document.getElementById('submitBtn');
+    const fine = document.getElementById('formFine');
+
+    if (mode === 'paynow') {
+      btn.textContent = 'Pay Now + Unlock Perks →';
+      btn.classList.add('pay-now-btn');
+      btn.classList.remove('submit-btn-reserve');
+      fine.textContent = 'You\'ll be taken to Square to complete payment. Secure checkout. Cancel anytime.';
+    } else {
+      btn.textContent = 'Reserve My Spot — $0 Today →';
+      btn.classList.remove('pay-now-btn');
+      fine.textContent = 'No payment today. We\'ll send your confirmation and payment link before opening day. Cancel anytime.';
+    }
+  }
+
+  function selectPlan(id) {
+    currentPlan = id;
+    document.querySelectorAll('.plan').forEach(p => p.classList.remove('selected'));
+    document.getElementById('plan-' + id).classList.add('selected');
+  }
+
+  function handleSubmit() {
+    const fields = [
+      document.getElementById('fname'),
+      document.getElementById('lname'),
+      document.getElementById('email')
+    ];
+
+    let valid = true;
+    fields.forEach(f => {
+      if (!f.value.trim()) {
+        f.classList.add('error');
+        f.style.animation = 'shake 0.3s ease';
+        setTimeout(() => { f.style.animation = ''; f.classList.remove('error'); }, 500);
+        valid = false;
+      }
+    });
+    if (!valid) return;
+
+    if (currentMode === 'paynow') {
+      // In production: redirect to Square link
+      const link = squareLinks.paynow[currentPlan];
+      // window.location.href = link;
+      // For now show success with pay-now messaging
+      showSuccess(true);
+    } else {
+      showSuccess(false);
+    }
+  }
+
+  function showSuccess(isPay) {
+    document.getElementById('formContent').style.display = 'none';
+    const screen = document.getElementById('successScreen');
+    screen.style.display = 'flex';
+
+    if (isPay) {
+      document.getElementById('successCheck').classList.add('pink-check');
+      document.getElementById('successTitle').textContent = 'You\'re a Founding Member.';
+      document.getElementById('successBody').textContent = 'Payment confirmed. Your tasting event invitation and first-month boost details will arrive by email. Welcome to the founding 100.';
+    } else {
+      document.getElementById('successTitle').textContent = 'Spot Reserved.';
+      document.getElementById('successBody').textContent = 'Check your email for confirmation. We\'ll send your payment link before we open. Welcome to the founding 100.';
+    }
+
+    const num = document.getElementById('slotsNum');
+    const match = num.textContent.match(/(\d+)/);
+    if (match) num.textContent = (parseInt(match[1]) - 1) + ' of 100 left';
+  }
+</script>
+
+</body>
+</html>
